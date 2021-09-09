@@ -185,7 +185,7 @@ $({ target: 'Math', stat: true, forced: true }, {
 /*! all exports used */
 /*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/querystring-es3/index.js (<- Module is not an ECMAScript module) */
-/*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js (<- Module is not an ECMAScript module) */
+/*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-github-corner/lib/GithubCorner.js (<- Module is not an ECMAScript module) */
 /*! ModuleConcatenation bailout: Cannot concat with /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react/index.js (<- Module is not an ECMAScript module) */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -2903,8 +2903,8 @@ function setupHighlighter(handlers) {
   startInspectingNative();
   return stopInspectingNative;
 }
-// EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js
-var launchEditorEndpoint = __webpack_require__("6C+4");
+// EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js
+var launchEditorEndpoint = __webpack_require__("Kbnq");
 var launchEditorEndpoint_default = /*#__PURE__*/__webpack_require__.n(launchEditorEndpoint);
 
 // EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/querystring-es3/index.js
@@ -6595,28 +6595,6 @@ var POLYFILL = isForced.POLYFILL = 'P';
 
 module.exports = isForced;
 
-
-/***/ }),
-
-/***/ "6C+4":
-/*!**********************************************************************************************************************!*\
-  !*** /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js ***!
-  \**********************************************************************************************************************/
-/*! no static exports found */
-/*! exports used: default */
-/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
- // TODO: we might want to make this injectable to support DEV-time non-root URLs.
-
-module.exports = '/__open-stack-frame-in-editor';
 
 /***/ }),
 
@@ -11544,6 +11522,28 @@ function createReactContext(defaultValue, calculateChangedBits) {
 var index = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext || createReactContext;
 /* harmony default export */ __webpack_exports__["a"] = (index);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../@umijs/deps/compiled/webpack/4/global.js */ "y4hX")))
+
+/***/ }),
+
+/***/ "Kbnq":
+/*!*******************************************************************************************************************************************************!*\
+  !*** /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/react-dev-inspector/node_modules/react-dev-utils/launchEditorEndpoint.js ***!
+  \*******************************************************************************************************************************************************/
+/*! no static exports found */
+/*! exports used: default */
+/*! ModuleConcatenation bailout: Module is not an ECMAScript module */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+ // TODO: we might want to make this injectable to support DEV-time non-root URLs.
+
+module.exports = '/__open-stack-frame-in-editor';
 
 /***/ }),
 
