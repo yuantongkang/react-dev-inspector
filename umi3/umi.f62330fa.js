@@ -23603,7 +23603,7 @@ function renderRoutes(routes, extraProps, switchProps) {
 }
 
 
-// CONCATENATED MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/@umijs/preset-built-in/node_modules/@umijs/renderer-react/dist/index.esm.js
+// CONCATENATED MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/@umijs/renderer-react/dist/index.esm.js
 
 
 
