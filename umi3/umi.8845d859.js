@@ -3050,7 +3050,7 @@ const gotoEditor = (source) => {
         colNumber: columnNumber,
     };
     /**
-     * api in 'react-dev-inspector/plugins/webpack/launchEditorMiddleware'
+     * api in 'react-dev-inspector/plugins/webpack/middlewares' launchEditorMiddleware
      */
     const apiRoute = isRelative
         ? `${launchEditorEndpoint_default.a}/relative`
