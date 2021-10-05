@@ -3763,7 +3763,7 @@ var emotion_styled_base_browser_esm_createStyled = function createStyled(tag, op
 function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 var TitleName = emotion_styled_base_browser_esm("h1", {
-  target: "e13t542m0",
+  target: "evve3o50",
   label: "TitleName"
 })( true ? {
   name: "1trfe00",
@@ -3789,7 +3789,7 @@ var Title = props => {
 function styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 
 var Description = emotion_styled_base_browser_esm("div", {
-  target: "e1887tsf0",
+  target: "epmwfqm0",
   label: "Description"
 })( true ? {
   name: "17iv70g",
@@ -3988,11 +3988,11 @@ var keyTone = /*#__PURE__*/emotion_css_esm_css( true ? {
   styles: "display:inline-block;padding:0.5rem 0.8rem;font:12px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:1.2rem;height:1.2rem;line-height:1.2rem;color:#444d56;vertical-align:middle;background-color:#fafbfc;border:1px solid #d1d5da;border-radius:0.4rem;box-shadow:inset 0 -1px 0 #d1d5da;label:keyTone;"
 } : undefined);
 var Keys = emotion_styled_base_browser_esm("div", {
-  target: "e1wh3hm1",
+  target: "e1k5nhff1",
   label: "Keys"
 })("display:inline-block;padding:0 0.5rem;opacity:1;animation:flickerAnimation 1.6s ease-in-out infinite;&>.", keyTone, "{margin:auto 0.8rem;}@keyframes flickerAnimation{0%{opacity:1;}50%{opacity:.4;}100%{opacity:1;}}" + ( true ? "" : undefined));
 var Pad = emotion_styled_base_browser_esm("div", {
-  target: "e1wh3hm0",
+  target: "e1k5nhff0",
   label: "Pad"
 })( true ? {
   name: "1bj9ao8",
@@ -4052,14 +4052,14 @@ var globalCss =  true ? {
   styles: "html,body,#root{margin:0;width:100%;height:100%;};label:globalCss;"
 } : undefined;
 var Base = emotion_styled_base_browser_esm("div", {
-  target: "e11p7mdm1",
+  target: "e157q20p1",
   label: "Base"
 })( true ? {
   name: "wfjpag",
   styles: "position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%"
 } : undefined);
 var styles_GithubCorner = /*#__PURE__*/emotion_styled_base_browser_esm(GithubCorner_default.a, {
-  target: "e11p7mdm0",
+  target: "e157q20p0",
   label: "GithubCorner"
 })( true ? "" : undefined);
 // CONCATENATED MODULE: ./src/layouts/index.tsx
@@ -4087,7 +4087,7 @@ var HomePage = () => {
       var _inspect$codeInfo2 = inspect.codeInfo,
           relativePath = _inspect$codeInfo2.relativePath,
           lineNumber = _inspect$codeInfo2.lineNumber;
-      window.open("".concat(projectRepo, "/blob/master/sites/umi3/").concat(relativePath, "#L").concat(lineNumber));
+      window.open("".concat(projectRepo, "/blob/master/examples/umi3/").concat(relativePath, "#L").concat(lineNumber));
     }
   }, emotion_react_browser_esm_jsx(Global, {
     "data-inspector-line": "32",
@@ -4371,7 +4371,7 @@ $({ target: 'Math', stat: true }, {
 /*! ModuleConcatenation bailout: Module is not an ECMAScript module */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/runner/work/react-dev-inspector/react-dev-inspector/sites/umi3/src/.umi-production/umi.ts */"tB8F");
+module.exports = __webpack_require__(/*! /home/runner/work/react-dev-inspector/react-dev-inspector/examples/umi3/src/.umi-production/umi.ts */"tB8F");
 
 
 /***/ }),
