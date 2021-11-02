@@ -2738,7 +2738,7 @@ if (typeof window !== 'undefined') {
 }
 
 /* harmony default export */ var hotkeys_esm = (hotkeys);
-// CONCATENATED MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/es/utils/hightlight.js
+// CONCATENATED MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/es/utils/highlight.js
 /**
  * mirror from https://github.com/facebook/react/blob/v16.13.1/packages/react-devtools-shared/src/backend/views/Highlighter/index.js
  */
@@ -3178,7 +3178,8 @@ class OverlayRect {
         this.node.appendChild(this.border);
         this.border.appendChild(this.padding);
         this.padding.appendChild(this.content);
-        container.appendChild(this.node);
+        // ensure OverlayRect dom always before OverlayTip dom rather than cover OverlayTip
+        container.prepend(this.node);
     }
     remove() {
         if (this.node.parentNode) {
@@ -3499,9 +3500,34 @@ const overlayStyles = {
 const defaultHotKeys = ['control', 'shift', 'command', 'c'];
 const Inspector = (props) => {
     const { keys, onHoverElement, onClickElement, disableLaunchEditor, children, } = props;
+    // hotkeys-js params need string
     const hotkey = (keys !== null && keys !== void 0 ? keys : defaultHotKeys).join('+');
-    const [isInspect, setIsInspect] = Object(react["useState"])(false);
+    /** inspector tooltip overlay */
     const overlayRef = Object(react["useRef"])();
+    const mousePointRef = Object(react["useRef"])({ x: 0, y: 0 });
+    const recordMousePoint = ({ clientX, clientY }) => {
+        mousePointRef.current.x = clientX;
+        mousePointRef.current.y = clientY;
+    };
+    const startInspect = () => {
+        const overlay = new Overlay_Overlay();
+        overlayRef.current = overlay;
+        const stopCallback = setupHighlighter({
+            onPointerOver: handleHoverElement,
+            onClick: handleClickElement,
+        });
+        overlay.setRemoveCallback(stopCallback);
+        // inspect element immediately at mouse point
+        const initPoint = mousePointRef.current;
+        const initElement = document.elementFromPoint(initPoint.x, initPoint.y);
+        if (initElement)
+            handleHoverElement(initElement);
+    };
+    const stopInspect = () => {
+        var _a;
+        (_a = overlayRef.current) === null || _a === void 0 ? void 0 : _a.remove();
+        overlayRef.current = undefined;
+    };
     const handleHoverElement = (element) => {
         var _a;
         const overlay = overlayRef.current;
@@ -3517,11 +3543,7 @@ const Inspector = (props) => {
         });
     };
     const handleClickElement = (element) => {
-        var _a;
-        const overlay = overlayRef.current;
-        (_a = overlay === null || overlay === void 0 ? void 0 : overlay.remove) === null || _a === void 0 ? void 0 : _a.call(overlay);
-        overlayRef.current = undefined;
-        setIsInspect(false);
+        stopInspect();
         const codeInfo = getElementCodeInfo(element);
         const { fiber, name } = getElementInspect(element);
         if (!disableLaunchEditor)
@@ -3533,40 +3555,36 @@ const Inspector = (props) => {
             name,
         });
     };
-    const startInspect = () => {
-        const overlay = new Overlay_Overlay();
-        const stopCallback = setupHighlighter({
-            onPointerOver: handleHoverElement,
-            onClick: handleClickElement,
-        });
-        overlay.setRemoveCallback(stopCallback);
-        overlayRef.current = overlay;
-        setIsInspect(true);
-    };
-    const stopInspect = () => {
-        var _a;
-        (_a = overlayRef.current) === null || _a === void 0 ? void 0 : _a.remove();
-        setIsInspect(false);
-    };
-    const handleInspectKey = () => (isInspect
-        ? stopInspect()
-        : startInspect());
+    Object(react["useEffect"])(() => {
+        document.addEventListener('mousemove', recordMousePoint, true);
+        return () => {
+            document.removeEventListener('mousemove', recordMousePoint, true);
+        };
+    }, []);
     Object(react["useEffect"])(() => {
         const handleHotKeys = (event, handler) => {
             if (handler.key === hotkey) {
-                handleInspectKey();
+                overlayRef.current
+                    ? stopInspect()
+                    : startInspect();
             }
-            else if (isInspect && handler.key === 'esc') {
+            else if (handler.key === 'esc' && overlayRef.current) {
                 stopInspect();
             }
         };
+        // https://github.com/jaywcjlove/hotkeys
         hotkeys_esm(`${hotkey}, esc`, handleHotKeys);
-        window.__REACT_DEV_INSPECTOR_TOGGLE__ = handleInspectKey;
+        /**
+         * @deprecated only for debug, will remove in next version
+         */
+        window.__REACT_DEV_INSPECTOR_TOGGLE__ = () => overlayRef.current
+            ? stopInspect()
+            : startInspect();
         return () => {
             hotkeys_esm.unbind(`${hotkey}, esc`, handleHotKeys);
             delete window.__REACT_DEV_INSPECTOR_TOGGLE__;
         };
-    }, [hotkey, isInspect, handleInspectKey]);
+    }, [hotkey]);
     return children;
 };
 
