@@ -15818,6 +15818,7 @@ module.exports = function () {
 
   var ReactPropTypes = {
     array: shim,
+    bigint: shim,
     bool: shim,
     func: shim,
     number: shim,
@@ -22707,9 +22708,6 @@ var history_createHistory = function createHistory() {
 
 // EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
 var inheritsLoose = __webpack_require__("BFfR");
-
-// EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/prop-types/index.js
-var prop_types = __webpack_require__("aWzz");
 
 // EXTERNAL MODULE: /home/runner/work/react-dev-inspector/react-dev-inspector/node_modules/mini-create-react-context/dist/esm/index.js
 var esm = __webpack_require__("KQfC");
